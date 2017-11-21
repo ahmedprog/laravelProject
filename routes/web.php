@@ -23,8 +23,11 @@ Route::get('profile','DashboardController@profile');
 Route::post('profile','DashboardController@uploadPhoto');
 
 Route::get('posts/create/{forum_id}','PostController@create');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware'=>['isAdmin']],function(){
+    Route::get('/admin', 'AdminController@index')->name('admin.index');    
+});
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/api/{name}','ApiController');

@@ -24,7 +24,7 @@
                     </div>
             @endforeach
     @if(!Auth::guest())
-    <a href="forum/create" class="btn btn-success btn-sm pull-right" role="button">New Forum</a>
+    <a href="forums/create" class="btn btn-success btn-sm pull-right" role="button">New Forum</a>
     @endif
         </div>
     </div>
